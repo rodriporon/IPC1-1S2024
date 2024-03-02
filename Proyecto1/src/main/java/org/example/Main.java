@@ -23,6 +23,10 @@ public class Main {
                 "00002", "passwordFatima", "Fatima Florisel", "Cerezo", "Pediatra"
         ));
 
+        doctores.add(new Doctor(
+                "00003", "passwordPedro", "Pedro", "Perez", "Pediatra"
+        ));
+
         SwingUtilities.invokeLater(() -> {
             InterfazInicioSesion interfazInicioSesion = new InterfazInicioSesion();
             interfazInicioSesion.setVisible(true);

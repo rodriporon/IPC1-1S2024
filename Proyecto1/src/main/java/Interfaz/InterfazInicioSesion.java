@@ -1,6 +1,7 @@
 package Interfaz;
 
 import org.example.Administrador;
+import org.example.Doctor;
 import org.example.Main;
 
 import javax.swing.*;
@@ -53,6 +54,11 @@ public class InterfazInicioSesion extends JFrame {
                     interfazAdministrador.setVisible(true);
                 });
             } else {
+                for (Doctor doctor : Main.doctores) {
+                    if (doctor.autenticar(codigo, contrasena)) {
+                        JOptionPane.showMessageDialog(this, "Inicio de Sesion de Doctor correcto");
+                    }
+                }
                 JOptionPane.showMessageDialog(this, "Codigo o contrasena incorrectos");
             }
 
