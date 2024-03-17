@@ -2,9 +2,10 @@ package org.example.Interfaz;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.Serializable;
 import java.util.Random;
 
-public class VehiculoInterfaz extends JPanel {
+public class VehiculoInterfaz extends JPanel implements Serializable {
     private String nombre;
     private Color color;
     private int carWidth, carHeight;
@@ -50,5 +51,49 @@ public class VehiculoInterfaz extends JPanel {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public int getCarWidth() {
+        return carWidth;
+    }
+
+    public void setCarWidth(int carWidth) {
+        this.carWidth = carWidth;
+    }
+
+    public int getCarHeight() {
+        return carHeight;
+    }
+
+    public void setCarHeight(int carHeight) {
+        this.carHeight = carHeight;
+    }
+
+    public int getPositionX() {
+        return positionX;
+    }
+
+    public void setPositionX(int positionX) {
+        this.positionX = positionX;
+    }
+
+    public int getPositionY() {
+        return positionY;
+    }
+
+    public void setPositionY(int positionY) {
+        this.positionY = positionY;
     }
 }

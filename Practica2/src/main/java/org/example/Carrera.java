@@ -4,8 +4,9 @@ import org.example.Interfaz.CarreraInterfaz;
 import org.example.Interfaz.VehiculoInterfaz;
 
 import javax.swing.*;
+import java.io.Serializable;
 
-public class Carrera implements Runnable {
+public class Carrera implements Runnable, Serializable {
     VehiculoInterfaz vehiculoInterfaz;
     private static final Object lock = new Object();
 
