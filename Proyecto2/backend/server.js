@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import authRoutes from "./routes/auth.js";
+import postsRoutes from "./routes/posts.js";
 import cors from "cors";
 
 
@@ -13,6 +14,7 @@ app.use(bodyParser.json()) // para peticiones application/json
 app.use(cors())
 
 app.use("/api/auth", authRoutes) // http://localhost:3000/api/auth/login
+app.use("/api/posts", postsRoutes) // http://localhost:3000/api/posts/get
 
 const PORT = 3000
 
