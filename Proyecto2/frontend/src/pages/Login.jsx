@@ -1,8 +1,10 @@
 import { Input, Button } from "@nextui-org/react";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const [redirectPath, setRedirectPath] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,11 +31,20 @@ export default function Login() {
 
       const data = await response.json();
       alert("Inicio de sesion exitoso");
-      console.log({ data });
+
+      if (data?.type === "admin") {
+        setRedirectPath("/admin");
+      } else if (data?.type === "user") {
+        setRedirectPath("/user");
+      }
     } catch (error) {
       console.error(error);
     }
   };
+
+  if (redirectPath) {
+    return <Navigate to={redirectPath} />;
+  }
 
   return (
     <main className="flex justify-center flex-col items-center h-screen">

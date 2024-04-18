@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Administrador from "./pages/Admin";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -17,6 +18,14 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/admin",
+    element: <Administrador />,
+  },
+  {
+    path: "/user",
+    element: <h1>Usuario</h1>,
   },
 ]);
 
