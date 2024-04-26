@@ -1,0 +1,14 @@
+[
+    {
+        "codigo": 201900000,
+        "nombres": "Mildred",
+        "apellidos": "Azurdia",
+        "correo": "mildred@gmail.com"
+    },
+    {
+        "codigo": 201900001,
+        "nombres": "Rodrigo",
+        "apellidos": "Poron",
+        "correo": "rodrigo@gmail.com"
+    }
+]

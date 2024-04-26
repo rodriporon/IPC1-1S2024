@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react";
 import Post from "../components/Post";
+import useUserStore from "../hooks/userStore";
+import FileUploader from "../components/FileUploader";
+import DataTable from "../components/DataTable";
 
 export default function AdminPage() {
+  const user = useUserStore((state) => state.user);
   const [posts, setPosts] = useState([]);
+  const [jsonData, setJsonData] = useState([]);
+
+  const handleDataLoad = (data) => {
+    setJsonData(data);
+  };
 
   const getPosts = async () => {
     try {
@@ -23,7 +32,13 @@ export default function AdminPage() {
 
   return (
     <main className="flex justify-center flex-col items-center h-screen gap-10">
-      <h1>Administrador</h1>
+      <h1>Administrador - {user}</h1>
+      <section>
+        <h2>Subir archivo</h2>
+        <FileUploader onDataLoad={handleDataLoad} />
+        <p>Usuarios cargados</p>
+        <DataTable data={jsonData} />
+      </section>
       <p>Estos son los posts:</p>
       {posts.map((post) => (
         <Post

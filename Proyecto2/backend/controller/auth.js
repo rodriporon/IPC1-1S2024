@@ -1,6 +1,7 @@
 let users = [{
     id: 1,
     email: "rodriporon2@gmail.com",
+    name: "Rodrigo Poron",
     password: "123456",
     type: "admin"
 },
@@ -21,7 +22,7 @@ export const login = (req, res) => {
         return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    return res.status(200).json({ message: "Login success", type: user?.type});
+    return res.status(200).json({ message: "Login success", type: user?.type, name: user?.name});
 }
 
 export const register = (req, res) => {
